@@ -1,6 +1,6 @@
 AOS.init();
 
-const eventDate = new Date("Dec 22, 2024 10:00:00");
+const eventDate = new Date("Jan 05, 2025 18:00:00");
 const eventTimeStamp = eventDate.getTime();
 
 const timeCounter = setInterval(function() {
@@ -23,6 +23,6 @@ const timeCounter = setInterval(function() {
 
     if (timeTillEvent < 0) {
         clearInterval(timeCounter);
-        document.getElementById('counter').innerHTML = `Evento já iniciado`
+        document.getElementById('counter').innerHTML = `Ihhh chegou tarde, agora já foi!`
     }
 }, 1000)
