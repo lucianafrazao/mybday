@@ -19,7 +19,7 @@ const timeCounter = setInterval(function() {
     const minsTillEvent = Math.floor((timeTillEvent % hoursInMs) / minsInMs);
     const secsTillEvent = Math.floor((timeTillEvent % minsInMs) / 1000);
 
-    document.getElementById('counter').innerHTML = `${daysTillEvent} days ${hoursTillEvent}h ${minsTillEvent}mins ${secsTillEvent}secs`;
+    document.getElementById('counter').innerHTML = `${daysTillEvent}d ${hoursTillEvent}h ${minsTillEvent}m ${secsTillEvent}s`;
 
     if (timeTillEvent < 0) {
         clearInterval(timeCounter);
