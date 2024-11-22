@@ -1,6 +1,13 @@
 AOS.init();
 
-const eventDate = new Date("Jan 05, 2025 18:00:00");
+// Redirect for RSVP button
+document.getElementById("rsvpButton").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    window.location.href = "rsvp-form.html"; // Redirect to the form page
+});
+
+// Countdown timer logic
+const eventDate = new Date("Jan 04, 2025 18:00:00");
 const eventTimeStamp = eventDate.getTime();
 
 const timeCounter = setInterval(function() {

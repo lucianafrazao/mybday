@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Form</title>
+    <link rel="stylesheet" href="styles/main.scss">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirme sua Presença</h1>
+        <form id="rsvpForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="companion">Quem vai comigo (opcional):</label>
+            <input type="text" id="companion" name="companion">
+
+            <button type="submit" class="button button--primary">Confirmar!</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("rsvpForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            const name = document.getElementById("name").value;
+            if (name) {
+                window.location.href = "confirmation.html"; // Redirect to the confirmation page
+            } else {
+                alert("Por favor, preencha o campo Nome.");
+            }
+        });
+    </script>
+</body>
+</html>
