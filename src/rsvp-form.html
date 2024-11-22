@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="styles/main.scss">
 </head>
 <body>
-    <div class="container">
-        <h1>Confirme sua Presença</h1>
-        <form id="rsvpForm">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="companion">Quem vai comigo (opcional):</label>
-            <input type="text" id="companion" name="companion">
-
-            <button type="submit" class="button button--primary">Confirmar!</button>
-        </form>
+    <div class="rsvp">
+        <div class="container">
+            <h1>Confirme sua Presença! 🎉</h1>
+            <form id="rsvpForm" class="rsvp-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="companion">Quem vai comigo (opcional):</label>
+                <input type="text" id="companion" name="companion">
+    
+                <button type="submit" class="button button--primary">Confirmar!</button>
+            </form>
+        </div>
     </div>
 
     <script>

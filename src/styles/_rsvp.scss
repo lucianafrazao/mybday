@@ -1,0 +1,40 @@
+@use 'variables';
+
+.rsvp {
+    max-width: 1024px;
+    width: 100vh;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: variables.$pink3;
+    padding: 64px;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column; /* Arrange items in a vertical stack */
+    gap: 10px; /* Adds space between form fields */
+    width: 100%;
+    max-width: 500px; /* Limit form width */
+
+    & label {
+        font-size: 1.2rem; /* Bigger font size for labels */
+        margin-top: 10px;
+    
+    }
+
+    & input {
+        font-size: 1.2rem; /* Bigger font size for input fields */
+        padding: 10px;
+        border: 10px solid #ccc;
+        border-radius: 4px;
+    }
+
+    & button:hover {
+        background-color: variables.$pink2;
+        cursor: pointer;
+    }
+}

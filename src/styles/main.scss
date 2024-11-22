@@ -3,6 +3,8 @@
 @use 'components/buttons';
 @use 'event';
 @use 'variables';
+@use 'rsvp';
+@use 'confirmation';
 
 * {
     margin: 0;

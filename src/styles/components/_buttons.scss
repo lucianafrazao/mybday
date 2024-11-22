@@ -13,6 +13,11 @@
         background-color: variables.$pink1;
     }
 
+    & :hover {
+        background-color: variables.$pink2;
+        cursor: pointer;
+    }
+
     @media (max-width: 640px) {
         display: block;
         width: 100%;
