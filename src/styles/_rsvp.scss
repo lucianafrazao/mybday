@@ -11,6 +11,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @media (max-width: 640px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 90%;
+    }
+}
+
+h1 {
+    text-align: center;
 }
 
 .rsvp-form {
