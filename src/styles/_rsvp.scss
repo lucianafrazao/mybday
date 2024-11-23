@@ -23,18 +23,12 @@
     & label {
         font-size: 1.2rem; /* Bigger font size for labels */
         margin-top: 10px;
-    
     }
 
     & input {
         font-size: 1.2rem; /* Bigger font size for input fields */
         padding: 10px;
-        border: 10px solid #ccc;
         border-radius: 4px;
-    }
-
-    & button:hover {
-        background-color: variables.$pink2;
-        cursor: pointer;
+        color: #000;
     }
 }

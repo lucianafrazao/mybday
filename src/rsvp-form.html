@@ -21,11 +21,29 @@
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("q5_0dZpfEGPs4Cqm_"); 
+    </script>
+    
     <script>
         document.getElementById("rsvpForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent form from reloading the page
             const name = document.getElementById("name").value;
+            const companion = document.getElementById("companion").value;
+
+            emailjs.send("service_q5ecpm3","template_knksxbh", {
+            name: name,
+            companion: companion,
+            })
+            .then(() => {
+                window.location.href = "confirmation.html";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Erro ao enviar RSVP. Por favor, tente novamente.");
+            });
+
             if (name) {
                 window.location.href = "confirmation.html"; // Redirect to the confirmation page
             } else {
