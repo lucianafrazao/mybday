@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSVP Form</title>
     <link rel="stylesheet" href="styles/main.scss">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <div class="rsvp">
         <div class="container">
@@ -13,41 +16,62 @@
             <form id="rsvpForm" class="rsvp-form">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required>
-    
+
                 <label for="companion">Quem vai comigo (opcional):</label>
                 <input type="text" id="companion" name="companion">
-    
+
                 <button type="submit" class="button button--primary">Confirmar!</button>
             </form>
         </div>
     </div>
     <script>
-        import emailjs from 'emailjs-com';
+        // import emailjs from 'emailjs-com';
 
-        // Initialize EmailJS
-        emailjs.init("q5_0dZpfEGPs4Cqm_"); 
+        // // Initialize EmailJS
+        // emailjs.init("q5_0dZpfEGPs4Cqm_"); 
 
         document.getElementById("rsvpForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent form from reloading the page
-    
+
             const name = document.getElementById("name").value;
             const companion = document.getElementById("companion").value;
-    
-            // Use EmailJS to send the email
-            emailjs
-                .send("service_q5ecpm3", "template_knksxbh", {
-                    name: name,
-                    companion: companion,
-                })
-                .then(() => {
-                    // Redirect to confirmation page on success
-                    window.location.href = "confirmation.html";
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                    alert("Erro ao enviar RSVP. Por favor, tente novamente.");
-                });
+
+            var data = {
+                service_id: 'service_q5ecpm3',
+                template_id: 'template_knksxbh',
+                user_id: 'q5_0dZpfEGPs4Cqm_',
+                template_params: {
+                    'from_name': name,
+                    'message': companion
+                }
+            };
+
+            $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json'
+            }).done(function () {
+                alert('Presença confirmada! Estou ansiosa pra comemorar com você! 🎉');
+            }).fail(function (error) {
+                alert('Oops... tente novamente' + JSON.stringify(error));
+            });
+            // alert(`RSVP teste enviado! Nome: ${name}, Acompanhante: ${companion}`);
+            // // Use EmailJS to send the email
+            // emailjs
+            //     .send("service_q5ecpm3", "template_knksxbh", {
+            //         name: name,
+            //         companion: companion,
+            //     })
+            //     .then(() => {
+            //         // Redirect to confirmation page on success
+            //         window.location.href = "confirmation.html";
+            //     })
+            //     .catch((error) => {
+            //         console.error("Error:", error);
+            //         alert("Erro ao enviar RSVP. Por favor, tente novamente.");
+            //     });
         });
-    </script>    
+    </script>
 </body>
+
 </html>
