@@ -7,7 +7,7 @@ document.getElementById("rsvpButton").addEventListener("click", function (event)
 });
 
 // Countdown timer logic
-const eventDate = new Date("Jan 04, 2025 19:00:00");
+const eventDate = new Date("Jan 04, 2025 17:00:00");
 const eventTimeStamp = eventDate.getTime();
 
 const timeCounter = setInterval(function() {
